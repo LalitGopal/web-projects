@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .modal {
+      margin-left: 33%;
+      margin-top: 30vh;
+      width: 33%;
+      height: 35vh;
+    }
+
+    .modal::backdrop {
+      background: linear-gradient(45deg, red, blue);
+      opacity: 0.4;
+    }
+  </style>
+  <body>
+    <h1>POPUP MPDALS</h1>
+    <br /><br />
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi repellat
+      iusto consequuntur voluptates perferendis laboriosam voluptas voluptatum
+      iste beatae non? Unde, perferendis ne que! Explicabo veniam itaque
+      doloribus laboriosam enim debitis nihil, dolorem iure et, maio res vitae
+      recusandae, ipsum est quos quam quo magni. Iure eaque voluptatem delectus
+      quo ita que repellendus?
+    </p>
+    <br />
+    <br />
+    <button class="open-button"><h1>open modal</h1></button>
+    <br />
+    <dialog class="modal" id="modal">
+      <p>Lorem ipsum dolor sit.</p>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <h1>Lorem, ipsum.</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+      <button class="close-button">close</button>
+    </dialog>
+    <script>
+      const modal = document.querySelector("#modal");
+      const openmodal = document.querySelector(".open-button");
+      const closemodal = document.querySelector(".close-button");
+
+      openmodal.addEventListener("click", () => {
+        modal.showModal();
+      });
+
+      closemodal.addEventListener("click", () => {
+        modal.close();
+      });
+    </script>
+  </body>
+</html>

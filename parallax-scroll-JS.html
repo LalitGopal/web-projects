@@ -1,0 +1,134 @@
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax-scroll-JS</title>
+    <style>
+
+ *{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+ }
+
+ 
+ div{
+
+ height: 100vh;
+ width: 100%;
+ display:flex;
+ justify-content: center;
+ align-items: center;
+
+ }
+
+ .dv1{
+
+ background-image: url("C:/Users/PC/Desktop/html,css,javascript/Image-Folder/sun.jpeg");
+ background-size: cover;
+ 
+ background-attachment: scroll;
+
+
+ }
+
+
+ .dv2{
+ background-color: rgb(202, 102, 8);
+ background-size: 100% 100%;
+
+ }
+
+  
+ .dv3{
+
+ height:60vh;   
+ background-image: url("C:/Users/PC/Desktop/html,css,javascript/Image-Folder/sunset.jpg");
+ background-size: cover;
+ background-attachment: fixed;
+
+ }
+ 
+ 
+ .dv4{
+
+ background-image: url("C:/Users/PC/Desktop/html,css,javascript/Image-Folder/galaxy.jpg");
+ background-size: cover;
+ background-attachment: fixed;
+
+ }
+ 
+ 
+ 
+    </style>
+
+
+ </head>
+   <body>
+    
+
+   <div class="dv1" id="parallax">  <h1>section-1</h1>    </div>
+
+   
+  
+
+   <div class="dv2">  <h1>section-2</h1>    </div>
+      
+  
+
+
+   <div class="dv3">   <h1>section-3</h1>    </div>
+   
+
+  
+
+   <div class="dv4"> 
+       
+    <p style="width:190px;
+     background-color:rgb(16, 145, 168);
+     padding:5px 5px;
+     border-radius:4px;
+     color:white;
+     box-shadow: 2px 2px 2px grey;
+     font-family:monospace;
+     height:55px;
+     overflow: -moz-hidden-unscrollable;"> 
+     
+     Lorem ipsum dolor sit amet consectetur adipisicing elit
+        . Harum ratione autem nostrum quae eos a maiores doloribus
+         beatae voluptatum. Porro nesciunt ducimus non dolore?
+          Plore.
+        
+        
+    </p>
+    
+
+ 
+ <br>
+
+    <h1>section-4</h1>    </div>
+         
+   
+ 
+
+ <script>
+
+ const parallax = document.getElementById('parallax');
+
+ window.addEventListener('scroll' , function(){
+
+ let offset = window.pageYOffset;
+
+ parallax.style.backgroundPositionY=offset * 0.7 +"px";
+
+
+ });
+
+
+ </script>
+
+ </body>
+ </html>
