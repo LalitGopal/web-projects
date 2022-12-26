@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-size: 40px;
+    }
+
+    #bdy {
+        background-color: #ffffff;
+    }
+</style>
+
+<body id="bdy">
+
+    <p id="para-p">pink</p>
+    <p id="para-b">blue</p>
+    <p id="para-g">black</p>
+    <p id="para-l">default</p>
+    <p id="a">pink2</p>
+    <script>
+
+        document.getElementById('para-p').addEventListener('click', () => {
+            document.getElementById('bdy').style.setProperty('background-color', 'pink');
+            document.getElementById('bdy').style.setProperty('color', 'hotpink');
+        });
+
+        document.getElementById('para-b').addEventListener('click', () => {
+            document.getElementById('bdy').style.setProperty('background-color', '#0980af');
+            document.getElementById('bdy').style.setProperty('color', '#09aaaf');
+        });
+
+        document.getElementById('para-g').addEventListener('click', () => {
+            document.getElementById('bdy').style.setProperty('background-color', 'black');
+            document.getElementById('bdy').style.setProperty('color', 'silver');
+        });
+
+
+        document.getElementById('a').addEventListener('click', () => {
+            document.getElementById('bdy').style.setProperty('background-color', 'pink');
+            document.getElementById('bdy').style.setProperty('color', 'hotpink');
+            document.getElementById('para-p').style.setProperty('color', '#a31480');
+            document.getElementById('para-b').style.setProperty('color', '#963f80');
+            document.getElementById('bdy').style.setProperty('color', '#c56eaf');
+            document.getElementById('a').style.setProperty('color', '#52073f');
+        });
+
+
+        document.getElementById('para-l').addEventListener('click', () => {
+            document.getElementById('bdy').style.setProperty('background-color', 'white');
+            document.getElementById('bdy').style.setProperty('color', 'black');
+        });
+
+
+    </script>
+
+</body>
+
+</html>
