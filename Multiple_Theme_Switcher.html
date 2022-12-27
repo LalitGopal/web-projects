@@ -1,0 +1,149 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Multiple Theme Switcher</title>
+</head>
+<style>
+    :root {
+        --main-color: #09aaaf;
+        --text-color: #4d1a22;
+
+    }
+
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: var(--main-color);
+    }
+
+    h1 {
+        color: var(--text-color);
+    }
+
+
+    .color-switcher {
+        position: fixed;
+        top: 25px;
+        right: -200px;
+        width: 200px;
+        padding: 10px;
+        background-color: #fff;
+        z-index: 1000;
+        transition: 1s ease-in-out;
+    }
+
+    .color-switcher.active {
+        right: 0px;
+        transition: 1s ease-in-out;
+    }
+
+
+    .color-switcher p {
+        color: var(--text-color);
+        font-size: 20px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #333;
+        padding: 5px 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    .color-switcher .switcher-btn {
+        position: absolute;
+        top: 0;
+        left: -75px;
+        color: var(--main-color);
+        background-color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 35px;
+    }
+
+    .color-switcher .theme-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .color-switcher .switcher-btn i {
+        animation: rotate 5s linear infinite;
+    }
+
+    @keyframes rotate {
+        100% {
+            transform: rotate(360deg);
+        }
+
+    }
+
+    .color-switcher .theme-container .theme-buttons {
+        display: block;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        margin: 5px;
+        cursor: pointer;
+
+    }
+</style>
+
+<body>
+    <div class="color-switcher">
+
+        <div class="switcher-btn">
+            <i class="fas fa-cog"></i>
+        </div>
+
+
+        <p>select color</p>
+
+        <div class="theme-container">
+            <span class="theme-buttons" data-color="#09aaaf" style="background:#09aaaf;"></span>
+            <span class="theme-buttons" data-color="#0980af" style="background:#0980af;"></span>
+            <span class="theme-buttons" data-color="#7c53aa" style="background:#7c53aa;"></span>
+            <span class="theme-buttons" data-color="#78be82" style="background:#531434;"></span>
+            <span class="theme-buttons" data-color="#9663b8" style="background:#9663b8;"></span>
+            <span class="theme-buttons" data-color="#c2c476" style="background:#3b8300;"></span>
+            <span class="theme-buttons" data-color="#b85c99" style="background:#b85c99;"></span>
+            <span class="theme-buttons" data-color="#492e4e" style="background:#492e4e;"></span>
+            <span class="theme-buttons" data-color="#d45f5f" style="background:#d45f5f;"></span>
+
+
+
+        </div>
+
+    </div>
+
+    <h1>lalit gopal</h1>
+
+    <script>
+        document.querySelector('.switcher-btn').onclick = () => {
+            document.querySelector('.color-switcher').classList.toggle('active');
+        };
+
+        let themeButtons = document.querySelectorAll('.theme-buttons');
+        themeButtons.forEach(color => {
+
+            color.addEventListener('click', () => {
+                let datacolor = color.getAttribute('data-color')
+                document.querySelector(':root').style.setProperty('--main-color', datacolor)
+
+            })
+
+        })
+
+    </script>
+</body>
+
+</html>

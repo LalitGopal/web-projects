@@ -1,0 +1,104 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll-Appear</title>
+    <style>
+
+ *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     overflow-x: hidden;
+ }
+
+ section{
+     height: 100vh;
+     width: 100vw;
+     background-color:rgb(80, 7, 55);
+ }
+
+ .sec2{
+     height: 100vh;
+     width: 100vw;
+     background-color: rgb(23, 86, 128);
+     font-size: 32px;
+ }
+
+ .sec3{
+     height: 100vh;
+     width: 100vw;
+     background-color: #a37800;
+ }
+    
+
+ .intro{
+     font-size:25px;
+     font-family: fantasy;
+     letter-spacing: 2px;
+     word-spacing: 3px;
+     margin: 25%;
+     opacity: 0;
+     transform:translateY(30px);
+     transition: 1s all ease-in-out;
+ }
+
+ .introA{
+    font-size:25px;
+     font-family: fantasy;
+     letter-spacing: 2px;
+     word-spacing: 3px;
+     margin: 25%;
+     opacity: 1;
+     transform:translateY(0px);
+     transition: 1s all ease-in-out;
+ }
+ 
+
+    </style>
+</head>
+<body>
+    <section>
+
+    </section>
+
+
+
+    <section class="sec2">
+
+   <p class="intro">Lorem ipsum dolor sit amet consectetur 
+    adipisicing elit. Ea distinctio porro dolorem
+     dicta doloremque eaque?</p>
+
+    </section>
+
+
+    <section class="sec3">
+
+  
+
+    </section>
+
+    <script>
+
+ function ScrollAppear() {
+
+ var introtext = document.querySelector('.intro');
+ var introPosition = introtext.getBoundingClientRect().top;
+ var screenposition = window.innerHeight/1.4;
+
+ if(introPosition < screenposition){
+
+ introtext.classList.add('introA');
+
+ }
+
+ }
+
+
+ window.addEventListener('scroll' , ScrollAppear);
+
+    </script>
+</body>
+</html>

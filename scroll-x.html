@@ -1,0 +1,211 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll-X</title>
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        overflow-y: scroll;
+    }
+
+    .title {
+        font-size: 60px;
+        font-family: serif;
+        font-kerning: normal;
+        text-align: center;
+        background-color: rgb(0, 151, 139);
+        padding: 18px 18px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        word-spacing: 4px;
+        color: rgb(53, 0, 54);
+    }
+
+
+    .imgc {
+
+        height: 75vh;
+        position: relative;
+        overflow: hidden;
+        padding: 1rem;
+        display: flex;
+    }
+
+    .imgbx {
+
+        height: 500px;
+        min-width: 470px;
+        margin-right: 2rem;
+
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+</style>
+
+<body>
+
+    <header>
+        <h1 class="title">Horizontal Scrolling</h1>
+    </header>
+    <br><br><br>
+    <main>
+
+
+        <section>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae voluptatem ea enim inventor
+                e iste eligendi optio fugit eaque debitis, perspiciatis sapiente, vero exercitationem tempore et
+                necessitatibus autem mollitia laboriosam explicabo quidem doloremque nobis. Voluptatum rem nam
+                placeat officiis cupiditate beatae tempora ut quod, dolorum dolorem aut saepe eveniet laboriosa
+                m consequatur, reprehenderit, dolor quis molestias labore repellat non itaque animi ullam. Odio
+                neque temporibus animi, nam hic et tempora labore deserunt pariatur, sunt rerum aspernatur tene
+                tur, quas voluptate alias sint ex eum recusandae at in. Corrupti
+                , veniam consequatur optio veritatis minus, quia labore fugiat sapiente culpa dolore praesentium
+                nulla?</p>
+
+            <br><br><br>
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae voluptatem ea enim inventor
+                e iste eligendi optio fugit eaque debitis, perspiciatis sapiente, vero exercitationem tempore et
+                necessitatibus autem mollitia laboriosam explicabo quidem doloremque nobis. Voluptatum rem nam
+                placeat officiis cupiditate beatae tempora ut quod, dolorum dolorem aut saepe eveniet laboriosa
+                m consequatur, reprehenderit, dolor quis molestias labore repellat non itaque animi ullam. Odio
+                neque temporibus animi, nam hic et tempora labore deserunt pariatur, sunt rerum aspernatur tene
+                tur, quas voluptate alias sint ex eum recusandae at in. Corrupti
+                , veniam consequatur optio veritatis minus, quia labore fugiat sapiente culpa dolore praesentium
+                nulla?</p>
+        </section>
+
+        <br><br><br>
+
+        <section>
+
+            <div class="imgc">
+
+
+                <div class="imgbx">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Color_icon_purple_v2.svg/1200px-Color_icon_purple_v2.svg.png"
+                        alt="">salt.jfif" alt="">
+                </div>
+
+
+                <div class="imgbx">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Color_icon_purple_v2.svg/1200px-Color_icon_purple_v2.svg.png"
+                        alt="">pepper.jpg" alt="">
+                </div>
+
+
+
+                <div class="imgbx">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Color_icon_purple_v2.svg/1200px-Color_icon_purple_v2.svg.png"
+                        alt="">sauce.jfif" alt="">
+                </div>
+
+
+
+                <div class="imgbx">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Color_icon_purple_v2.svg/1200px-Color_icon_purple_v2.svg.png"
+                        alt="">lime.jfif" alt="">
+                </div>
+
+
+
+                <div class="imgbx">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Color_icon_purple_v2.svg/1200px-Color_icon_purple_v2.svg.png"
+                        alt="">
+                </div>
+
+
+
+                <div class="imgbx">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Color_icon_purple_v2.svg/1200px-Color_icon_purple_v2.svg.png"
+                        alt="">
+                </div>
+
+
+            </div>
+
+            <script>
+
+                let imgs = document.querySelector('.imgc');
+
+                imgs.addEventListener('wheel', (evnt) => {
+
+                    evnt.preventDefault();
+
+                    imgs.scrollLeft += evnt.deltaY;
+
+                })
+
+
+
+            </script>
+
+        </section>
+
+        <br><br><br><br><br>
+        <section class="sec2">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae voluptatem ea enim inventor
+                e iste eligendi optio fugit eaque debitis, perspiciatis sapiente, vero exercitationem tempore et
+                necessitatibus autem mollitia laboriosam explicabo quidem doloremque nobis. Voluptatum rem nam
+                placeat officiis cupiditate beatae tempora ut quod, dolorum dolorem aut saepe eveniet laboriosa
+                m consequatur, reprehenderit, dolor quis molestias labore repellat non itaque animi ullam. Odio
+                neque temporibus animi, nam hic et tempora labore deserunt pariatur, sunt rerum aspernatur tene
+                tur, quas voluptate alias sint ex eum recusandae at in. Corrupti
+                , veniam consequatur optio veritatis minus, quia labore fugiat sapiente culpa dolore praesentium
+                nulla?</p>
+
+
+            <br><br><br><br><br>
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae voluptatem ea enim inventor
+                e iste eligendi optio fugit eaque debitis, perspiciatis sapiente, vero exercitationem tempore et
+                necessitatibus autem mollitia laboriosam explicabo quidem doloremque nobis. Voluptatum rem nam
+                placeat officiis cupiditate beatae tempora ut quod, dolorum dolorem aut saepe eveniet laboriosa
+                m consequatur, reprehenderit, dolor quis molestias labore repellat non itaque animi ullam. Odio
+                neque temporibus animi, nam hic et tempora labore deserunt pariatur, sunt rerum aspernatur tene
+                tur, quas voluptate alias sint ex eum recusandae at in. Corrupti
+                , veniam consequatur optio veritatis minus, quia labore fugiat sapiente culpa dolore praesentium
+                nulla?</p>
+
+            <br><br><br><br><br>
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae voluptatem ea enim inventor
+                e iste eligendi optio fugit eaque debitis, perspiciatis sapiente, vero exercitationem tempore et
+                necessitatibus autem mollitia laboriosam explicabo quidem doloremque nobis. Voluptatum rem nam
+                placeat officiis cupiditate beatae tempora ut quod, dolorum dolorem aut saepe eveniet laboriosa
+                m consequatur, reprehenderit, dolor quis molestias labore repellat non itaque animi ullam. Odio
+                neque temporibus animi, nam hic et tempora labore deserunt pariatur, sunt rerum aspernatur tene
+                tur, quas voluptate alias sint ex eum recusandae at in. Corrupti
+                , veniam consequatur optio veritatis minus, quia labore fugiat sapiente culpa dolore praesentium
+                nulla?</p>
+
+            <br><br><br><br><br>
+
+
+        </section>
+
+    </main>
+
+
+
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>

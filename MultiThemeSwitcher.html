@@ -8,21 +8,36 @@
 </head>
 <style>
     * {
-        font-size: 40px;
+        font-size: 30px;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
     }
 
     #bdy {
         background-color: #ffffff;
     }
+
+    span {
+        background-color: hotpink;
+        padding: 3px;
+    }
+
+    .container {
+        background-color: rgb(218, 227, 231);
+    }
 </style>
 
 <body id="bdy">
+    <div class="container">
+        <span id="para-p">🟣</span>
+        <span id="para-b">🔵</span>
+        <span id="para-g">⚫</span>
+        <span id="para-l">⚪</span>
+        <span id="a">🟣</span>
+    </div>
 
-    <p id="para-p">pink</p>
-    <p id="para-b">blue</p>
-    <p id="para-g">black</p>
-    <p id="para-l">default</p>
-    <p id="a">pink2</p>
+
     <script>
 
         document.getElementById('para-p').addEventListener('click', () => {
