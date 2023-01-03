@@ -169,10 +169,8 @@
 
             static removec(Email) {
                 const contacts = store.getc();
-                console.log("email to be deleted " + Email);
                 contacts.forEach((contact, index) => {
                     if (contact.Email === Email) {
-                        console.log("Email being deleted " + contact.Email);
                         contacts.splice(index, 1);
                     }
 
