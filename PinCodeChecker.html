@@ -1,0 +1,118 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PinCode Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<style>
+    .card {
+        background-color: silver;
+    }
+
+    #table {
+        display: none;
+    }
+</style>
+
+<body class="bg-dark">
+    <!--Container start-->
+
+    <div class="container">
+        <!--input box...-->
+        <div class="row mt-0">
+            <div class="col-md-6 mx-auto ">
+                <div class="card   mt-5 p-5">
+                    <h1>PinCode</h1>
+                    <p>Enter any pincode</p>
+                    <input type="text" class="form-control form-control-large" id="PinInput"
+                        placeholder="Enter the pincode...">
+
+                    <input type="submit" value="EnterPin" class="btn  btn btn-outline-warning text-dark mt-3"
+                        id="button">
+
+                </div>
+            </div>
+        </div>
+        <!--input box...-->
+
+        <!--table...-->
+        <table class="table mt-5 text-white mx-0" id="table">
+            <thead>
+                <th>Place Name</th>
+                <th>Longitude</th>
+                <th>State</th>
+                <th>Latitude</th>
+            </thead>
+
+            <tbody id="tbody">
+
+
+            </tbody>
+
+        </table>
+
+        <!--table...-->
+
+    </div>
+    <!--Container end-->
+
+    <script>
+
+        const btn = document.getElementById('button');
+        btn.onclick = function () {
+
+
+
+
+            const input = document.getElementById('PinInput').value;
+            const body = document.getElementById('tbody');
+            const table = document.getElementById('table');
+
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://zippopotam.us/in/' + input);
+
+            xhr.onload = function () {
+                if (this.status == 200 && input != '') {
+                    table.style.display = 'block';
+                    rowCount = table.rows.length;
+                    console.log(rowCount)
+
+                    for (let i = rowCount - 1; i > 0; i--) {
+                        table.deleteRow(i);
+                    }
+
+                    value = JSON.parse(this.responseText);
+                    myplaces = value.places;
+
+                    const list = document.getElementById('tbody');
+
+                    //for (i = 0; i <= myplaces.length; i++) {
+                    for (i in myplaces) {
+                        const row = document.createElement('tr');
+                        place = value.places[i];
+                        row.innerHTML = `
+                        <td>${place["place name"]}</td>
+                        <td>${place.longitude}</td>
+                        <td>${place.state}</td>
+                        <td>${place.latitude}</td>`;
+
+                        list.appendChild(row);
+                    }
+
+
+                }
+
+            }
+
+            xhr.send();
+        }
+
+    </script>
+
+</body>
+
+</html>
